@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="runApp">
+<head>
+	<meta charset="UTF-8">
+	<link href='http://fonts.googleapis.com/css?family=Crete+Round|Titillium+Web:300,400' rel='stylesheet' type='text/css'>	
+	<script src="moment.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="runapp.js"></script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="running.css">
+	<title>RunTime</title>
+</head>
+<body>
+	<h2>Run Time!</h2>
+	<form ng-controller="RunAppController as runapp">
+		<p><label for="estimate">Conservative pace estimate (minutes/mile):</label> <input name="estimate" id="estimate" type="number" value="10" min="4" max="25" step="1"></p>
+		<p><label for="mileage">How many miles will you run?</label><input name="mileage" id="mileage" type="number" value="5" min="1" max="150" step="1"></p>
+		<p><label for="travelto">Travel time to your run:</label><input name="travelto" id="travelto" type="number" value="15" min="0" step="5"></p>
+		<p><label for="travelfrom">Return travel time from your run:</label><input name="travelfrom" id="travelfrom" type="number" value="20" min="0" step="5"></p>
+
+		<p><label for="arriveby">And I need to be back by:</label><input name="arriveby" id="arriveby" type="time" value="07:00"></p>
+		<button ng-click="runapp.calcTime();"><i class="fa fa-clock-o"></i>&nbsp;When do I leave?</button>
+	</form>
+	
+</body>
+</html>
+
