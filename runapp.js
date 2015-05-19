@@ -13,5 +13,6 @@ angular.module("runApp", [])
 			//console.log("minutes: " + mins);
 			var res = moment(destTime, 'HH:mm').subtract(mins, 'minutes').format("hh:mm a");
 			console.log(res);
+			angular.element(document.querySelector("#leaveby")).html(res);
 		};
 	});
