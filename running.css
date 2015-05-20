@@ -5,6 +5,11 @@ body, html {
 	font-weight: 300;
 }
 
+body { 
+	width: 40%;
+	margin: 0 auto;
+}
+
 h1, h2, h3, h4, h5, h6 { 
 	font-family: 'Crete Round', serif;
 }
@@ -13,16 +18,35 @@ input {
 	padding: 10px;
 	font-size: 1.25em;
 	margin: 5px;
+	width: 25%;
+	text-align: right;
 }
 
 label { 
-	/*width: 20%;*/
-	/*float: left;
-	padding: 0px 10px 10px 0;
-	clear: both;*/
+  width: 50%;
+  float: left;
+  padding: 0px 10px 10px 10px;
+  clear: both;
+  line-height: 30px;
 }
 
 button { 
 	padding: 10px;
 	border-radius: 5px;
+}
+
+@media(max-width: 768px) {
+	body { 
+		width: 80%;
+	}
+}
+
+form p:nth-child(2n+1) {
+	background-color: rgba(166, 166, 166, 0.15);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	margin-left: 10px;
+	margin-right: 10px;
 }
