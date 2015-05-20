@@ -35,11 +35,6 @@ button {
 	border-radius: 5px;
 }
 
-@media(max-width: 768px) {
-	body { 
-		width: 80%;
-	}
-}
 
 form p:nth-child(2n+1) {
 	background-color: rgba(166, 166, 166, 0.15);
@@ -49,4 +44,38 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 	margin-left: 10px;
 	margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+	body { 
+		width: 80%;
+		font-size: 1.5em;
+	}
+	label { 
+	  width: 40%;
+	}
+	input {
+		font-size: 1.75em;
+		width: 35%;
+	}	
+}
+
+@media (max-width: 479px) {
+	body, input { font-size: 1em; }
+	label, input { 
+	  width: auto;
+	  float: none;
+	  clear: both;
+	}
+
+	input {
+		width:90%;
+		margin: 0 auto;
+		padding: 10px;
+		font-size: 1.75em;
+	}
+	
+	p {
+	  padding: 10px 5px;
+	}
 }
