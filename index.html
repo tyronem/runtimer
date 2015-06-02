@@ -12,15 +12,19 @@
 </head>
 <body>
 	<h2>Run Time!</h2>
-	<form ng-controller="RunAppController as runapp">
-		<p><label for="estimate">Slowest pace (min/mile):</label> <input name="estimate" id="estimate" type="number" value="10" min="4" max="25" step="1"></p>
-		<p><label for="mileage">How many miles will you run?</label><input name="mileage" id="mileage" type="number" value="5" min="1" max="150" step="1"></p>
-		<p><label for="travelto">Travel time to your run:</label><input name="travelto" id="travelto" type="number" value="15" min="0" step="5"></p>
-		<p><label for="travelfrom">Travel time from your run:</label><input name="travelfrom" id="travelfrom" type="number" value="20" min="0" step="5"></p>
-		<p><label for="arriveby">Return by:</label><input name="arriveby" id="arriveby" type="time" value="07:00"></p>
-		<button ng-click="runapp.calcTime();"><i class="fa fa-clock-o"></i>&nbsp;When do I leave?</button>
-	</form>
-	<div id="leaveby"></div>
+
+	<div ng-controller="RunAppController as runapp">
+		<form >
+			<p><label for="estimate">Slowest pace (min/mile):</label> <input name="estimate" id="estimate" type="number" value="10" min="4" max="25" step="1"></p>
+			<p><label for="mileage">How many miles will you run?</label><input name="mileage" id="mileage" type="number" value="5" min="1" max="150" step="1"></p>
+			<p><label for="travelto">Travel time to your run:</label><input name="travelto" id="travelto" type="number" value="15" min="0" step="5"></p>
+			<p><label for="travelfrom">Travel time from your run:</label><input name="travelfrom" id="travelfrom" type="number" value="20" min="0" step="5"></p>
+			<p><label for="arriveby">Return by:</label><input name="arriveby" id="arriveby" type="time" value="07:00"></p>
+			<button ng-click="runapp.calcTime();"><i class="fa fa-clock-o"></i>&nbsp;When do I leave?</button>
+		</form>
+		
+		<div id="results" ng-show="runapp.leaveby != undefined">Leave by {{runapp.leaveby}}</div>
+	</div>
 </body>
 </html>
 

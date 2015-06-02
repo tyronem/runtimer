@@ -22,6 +22,10 @@ input {
 	text-align: right;
 }
 
+#results {
+	text-align: center;
+}
+
 label { 
   width: 50%;
   float: left;

@@ -1,6 +1,7 @@
 angular.module("runApp", [])
 	.controller("RunAppController", function() {
 
+		this.leaveby = undefined;
 		this.calcTime = function(){
 			//console.log("calculate!");
 			var miles = parseInt(angular.element(document.querySelector("#mileage")).val());
@@ -11,8 +12,8 @@ angular.module("runApp", [])
 
 			var mins = (miles * pace) + travelto + travelfrom;
 			//console.log("minutes: " + mins);
-			var res = moment(destTime, 'HH:mm').subtract(mins, 'minutes').format("hh:mm a");
-			console.log(res);
-			angular.element(document.querySelector("#leaveby")).html(res);
+			this.leaveby = moment(destTime, 'HH:mm').subtract(mins, 'minutes').format("hh:mm a");
+			console.log(this.leaveby);
+			//angular.element(document.querySelector("#leaveby")).html(leaveby);
 		};
 	});
